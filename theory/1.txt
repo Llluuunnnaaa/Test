@@ -1,0 +1,30 @@
+1. Данный код выводит следующий результат:
+Bad: 12
+Bad: 12
+Bad: 12
+Bad: 12
+
+2. Предложенные 2 варианта модификации кода, чтобы ответ был следующим: Bad: 10, Bad: 12, Good: 15, Good: 21 
+const arr = [10, 12, 15, 21];
+for (let i = 0; i < arr.length; i++) {
+    setTimeout(function() {
+        console.log(arr[i] > 13 ? `Good: ${arr[i]}` : `Bad: ${arr[i]}`);
+    }, 3000);
+}
+
+const arr = [10, 12, 15, 21];
+for (var i = 0; i < arr.length; i++) {
+    (function(index) {
+        setTimeout(function() {
+            console.log(arr[index] > 13 ? `Good: ${arr[index]}` : `Bad: ${arr[index]}`);
+        }, 3000);
+    })(i);
+}
+
+Третий вариант:
+const arr = [10, 12, 15, 21];
+for (var i = 0; i < arr.length; i++) {
+    setTimeout(function (num) {
+        console.log(num > 13 ? `Good: ${num}` : `Bad: ${num}`);
+    }, 3000 * i, arr[i]);
+}
