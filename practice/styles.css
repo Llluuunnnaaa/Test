@@ -1,0 +1,417 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.main {
+    text-align: center;
+}
+
+.main_btn {
+    text-align: center;
+}
+.main_btn button {
+    width: 70%;
+}
+/* Стили для кнопки "Стать партнером проекта" */
+.open-modal-button {
+    background-color: #ff69b4;
+    color: #fff;
+    border: 1px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding:50px;
+    border-radius: 5px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+h2 {
+    margin: 0 auto;
+    font-weight: bold;
+}
+/* Стили для полей формы */
+form label {
+    display: block;
+    margin-bottom: 10px;
+    
+}
+
+
+form input[type="text"],
+form input[type="tel"],
+form input[type="email"],
+form input[type="url"] {
+    width: 100%;
+    height: 25px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+}
+
+
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+}
+
+
+
+.logoSec .input_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.logoSec .input_wrapper{
+    margin-top: 20px;
+
+}
+
+.label_sec {
+    display: block;
+    position: relative;
+    left: 1em;
+    top: 2.7em;
+    color: #6A6E72;
+    font-size: 10px;
+}
+.mainSec {
+    display: flex;
+    justify-content: space-between;
+}
+.infoSec {
+    width: 100%;
+    margin-right: 50px;
+}
+
+.red {
+    color:red;
+  }
+
+.link_sec {
+    margin-top: 25px;
+    width: 96%;
+}
+
+
+.castom-input {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto 0;
+      width: 15px;
+      height: 15px;
+      background: url('global1.png') no-repeat;
+      background-size: cover;
+    }
+}
+.castom-input2 {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto 0;
+      width: 15px;
+      height: 15px;
+      background: url('vk.png') no-repeat;
+      background-size: cover;
+    }
+}
+.castom-input3 {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto 0;
+      width: 15px;
+      height: 15px;
+      background: url('odn.png') no-repeat;
+      background-size: cover;
+    }
+}
+.castom-input4 {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto 0;
+      width: 15px;
+      height: 15px;
+      background: url('fc.png') no-repeat;
+      background-size: cover;
+    }
+}
+.castom-input5 {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto 0;
+      width: 15px;
+      height: 15px;
+      background: url('inst.png') no-repeat;
+      background-size: cover;
+    }
+}
+.castom-input6 {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto 0;
+      width: 15px;
+      height: 15px;
+      background: url('yt.png') no-repeat;
+      background-size: cover;
+    }
+}
+
+.link_div:not(:last-child) {
+    margin-bottom: 25px;
+}
+.select_Sec select {
+    height: 46px;
+}
+
+.lid_sec {
+    width: 96%;
+    margin-bottom: 25px;
+}
+
+.input_wrapper-input_file {
+
+}
+
+.input-file {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 100%;
+    height: 125px;
+    background: url(Ellipse.png) center;
+}
+img {
+    width: 20%;
+    height: 20%;
+}
+
+.input-file-text img {
+        margin-top: -30px;
+        width: 150%;
+        height: 50%;
+}
+
+
+.input-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.input-file-btn {
+    display: block;
+    padding: 20px;
+    font-size: 13px;
+    text-decoration: underline;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.file-input {
+    display: none;
+  }
+
+  .file-input-label {
+    display: block;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    text-align: center;
+    cursor: pointer;
+    border: 2px none #ccc;
+    text-decoration: underline;
+  }
+
+  .file-input-label:hover {
+    background-color: #e0e0e0;
+  }
+
+  .input_wrapper-input_file input {
+    width: 150px;
+  }
+
+  .preview-container {
+    position: relative;
+    display: none;
+    margin-top: -132px;
+  }
+
+  .preview-image {
+    object-fit: cover;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+  }
+
+  .clear-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #6A6E72;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+
+
+.input-file-text {
+    display: block;
+    padding-top: 30px;
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+}
+.logoSec {
+    width: 30%;
+}
+.input_wrapper label {
+    color: #6A6E72;
+    font-size: 9px;
+}
+.logo_text {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* Стили для кнопок */
+.submit-button {
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn_end {
+    display: flex;
+    flex-direction: column;
+
+}
+.btn_end button {
+    height: 46px;
+}
+.btn_end .close {
+    color: #0848C0;
+    background-color: white;
+    border: 0;
+}
+
+@media (max-width: 750px) {
+    
+    body {
+        margin: 0 auto;
+    }
+    .mainSec {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .infoSec {
+        width: 100%;
+        margin: 0 auto;
+    
+    }
+    .input-file {
+        width: 130Px;
+        
+    }
+    .input_wrapper {
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logoSec {
+        width: 100%;
+    }
+    .logoSec .input_wrapper {
+        margin-top: 20px;
+        width: 40%;
+    }
+    form input[type="text"], form input[type="tel"], form input[type="email"] {
+        width: 94%; 
+    }
+ 
+  
+}
+
+@media (max-width: 450px) {
+    form input[type="text"], form input[type="tel"], form input[type="email"] {
+        width: 92%; 
+        height: 25px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 1px;
+    }
+}
+

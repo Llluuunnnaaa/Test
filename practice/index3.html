@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posts Table</title>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  th {
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<input type="text" id="searchInput" placeholder="Search..." style="margin-bottom: 10px;"><br>
+
+<table id="postsTable">
+  <thead>
+    <tr>
+      <th onclick="sortTable(0)">User ID</th>
+      <th onclick="sortTable(1)">ID</th>
+      <th onclick="sortTable(2)">Title</th>
+      <th onclick="sortTable(3)">Body</th>
+    </tr>
+  </thead>
+  <tbody id="postsTableBody">
+ 
+  </tbody>
+</table>
+
+<script>
+
+function getPosts() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var posts = JSON.parse(xhr.responseText);
+      displayPosts(posts);
+    }
+  };
+  xhr.send();
+}
+
+
+function displayPosts(posts) {
+  var tableBody = document.getElementById("postsTableBody");
+  tableBody.innerHTML = "";
+  posts.forEach(function(post) {
+    var row = document.createElement("tr");
+    row.innerHTML = "<td>" + post.userId + "</td><td>" + post.id + "</td><td>" + post.title + "</td><td>" + post.body + "</td>";
+    tableBody.appendChild(row);
+  });
+}
+
+
+function sortTable(columnIndex) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("postsTable");
+  switching = true;
+  dir = "asc";
+  
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+    
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = parseFloat(rows[i].getElementsByTagName("td")[columnIndex].textContent);
+      y = parseFloat(rows[i + 1].getElementsByTagName("td")[columnIndex].textContent);
+      
+      if (dir == "asc") {
+        if (x > y) {
+          shouldSwitch = true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x < y) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      switchcount++;
+    } else {
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+
+
+
+
+
+document.getElementById("searchInput").addEventListener("input", function() {
+  var input, filter, table, tr, td, i, j, txtValue;
+  input = document.getElementById("searchInput");
+  filter = input.value.toLowerCase();
+  table = document.getElementById("postsTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td");
+    for (j = 0; j < td.length; j++) {
+      if (td[j]) {
+        txtValue = td[j].textContent || td[j].innerText;
+        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+          break;
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+});
+
+
+window.onload = function() {
+  getPosts();
+};
+</script>
+
+</body>
+</html>
