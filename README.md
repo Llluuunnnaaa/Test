@@ -4,7 +4,7 @@
 - Второе практическое задание - https://llluuunnnaaa.github.io/Site_2/
 - Третье практическое задание - https://llluuunnnaaa.github.io/Practice/
 
-## Добраотка
+## Доработка
 - Первое практическое задание - https://llluuunnnaaa.github.io/Site_module/
 - Третье практическое задание - https://llluuunnnaaa.github.io/Practice/
 
